@@ -1,0 +1,132 @@
+
+[TESTING] Register Admin...
+[FAILED] Register Admin
+Cannot bind parameter 'Headers'. Cannot convert the "Content-Type: application/json" value of type "System.String" to type "System.Collections.IDictionary".
+
+[TESTING] Login Admin...
+[FAILED] Login Admin
+Cannot bind parameter 'Headers'. Cannot convert the "Content-Type: application/json" value of type "System.String" to type "System.Collections.IDictionary".
+ConvertFrom-Json : Cannot bind argument to 
+parameter 'InputObject' because it is null.
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:34 char:33
++ $adminToken = ($loginResponse | 
+ConvertFrom-Json).data.accessToken
++                                 
+~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [ 
+   ConvertFrom-Json], ParameterBindingValidatio  
+  nException
+    + FullyQualifiedErrorId : ParameterArgumentV 
+   alidationErrorNullNotAllowed,Microsoft.Power  
+  Shell.Commands.ConvertFromJsonCommand
+ 
+Admin Token: 
+
+[TESTING] Register Employee...
+[FAILED] Register Employee
+Cannot bind parameter 'Headers'. Cannot convert the "Content-Type: application/json" value of type "System.String" to type "System.Collections.IDictionary".
+
+[TESTING] Login Employee...
+[FAILED] Login Employee
+Cannot bind parameter 'Headers'. Cannot convert the "Content-Type: application/json" value of type "System.String" to type "System.Collections.IDictionary".
+ConvertFrom-Json : Cannot bind argument to 
+parameter 'InputObject' because it is null.
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:54 char:34
++ $empToken = ($loginEmpResponse | 
+ConvertFrom-Json).data.accessToken
++                                  
+~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [ 
+   ConvertFrom-Json], ParameterBindingValidatio  
+  nException
+    + FullyQualifiedErrorId : ParameterArgumentV 
+   alidationErrorNullNotAllowed,Microsoft.Power  
+  Shell.Commands.ConvertFromJsonCommand
+ 
+ConvertFrom-Json : Cannot bind argument to 
+parameter 'InputObject' because it is null.
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:55 char:31
++ $empId = ($loginEmpResponse | 
+ConvertFrom-Json).data.user.id
++                               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [ 
+   ConvertFrom-Json], ParameterBindingValidatio  
+  nException
+    + FullyQualifiedErrorId : ParameterArgumentV 
+   alidationErrorNullNotAllowed,Microsoft.Power  
+  Shell.Commands.ConvertFromJsonCommand
+ 
+Employee Token: , ID: 
+
+[TESTING] Admin - Get All Users...
+[FAILED] Admin - Get All Users
+Cannot bind parameter 'Headers'. Cannot convert the "Authorization: Bearer " value of type "System.String" to type "System.Collections.IDictionary".
+
+[TESTING] Admin - Create Customer...
+[FAILED] Admin - Create Customer
+Cannot bind parameter 'Headers'. Cannot convert the "Authorization: Bearer " value of type "System.String" to type "System.Collections.IDictionary".
+ConvertFrom-Json : Cannot bind argument to 
+parameter 'InputObject' because it is null.
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:70 char:36
++ $customerId = ($customerResponse | 
+ConvertFrom-Json).data.id
++                                    
+~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [ 
+   ConvertFrom-Json], ParameterBindingValidatio  
+  nException
+    + FullyQualifiedErrorId : ParameterArgumentV 
+   alidationErrorNullNotAllowed,Microsoft.Power  
+  Shell.Commands.ConvertFromJsonCommand
+ 
+
+[TESTING] Admin - Create Task...
+[FAILED] Admin - Create Task
+Cannot bind parameter 'Headers'. Cannot convert the "Authorization: Bearer " value of type "System.String" to type "System.Collections.IDictionary".
+ConvertFrom-Json : Cannot bind argument to 
+parameter 'InputObject' because it is null.
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:81 char:28
++ $taskId = ($taskResponse | 
+ConvertFrom-Json).data.id
++                            ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [ 
+   ConvertFrom-Json], ParameterBindingValidatio  
+  nException
+    + FullyQualifiedErrorId : ParameterArgumentV 
+   alidationErrorNullNotAllowed,Microsoft.Power  
+  Shell.Commands.ConvertFromJsonCommand
+ 
+
+[TESTING] Employee - Get Assigned Tasks...
+[FAILED] Employee - Get Assigned Tasks
+Cannot bind parameter 'Headers'. Cannot convert the "Authorization: Bearer " value of type "System.String" to type "System.Collections.IDictionary".
+
+[TESTING] Employee - Update Task Status...
+[FAILED] Employee - Update Task Status
+Cannot bind parameter 'Headers'. Cannot convert the "Authorization: Bearer " value of type "System.String" to type "System.Collections.IDictionary".
+
+[EXPECTED FAILURE] Employee trying to create customer...
+Invoke-WebRequest : Cannot bind parameter 
+'Headers'. Cannot convert the "Authorization: 
+Bearer " value of type "System.String" to type 
+"System.Collections.IDictionary".
+At C:\Users\DEBI PRASAD\Downloads\Mini CRM 
+Backend\smoke-test.ps1:95 char:39
++ ...  POST $baseUrl/customers -H 
+"Authorization: Bearer $empToken" -H "Con ...
++                                 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: ( 
+   :) [Invoke-WebRequest], ParameterBindingExce  
+  ption
+    + FullyQualifiedErrorId : CannotConvertArgum 
+   entNoMessage,Microsoft.PowerShell.Commands.I  
+  nvokeWebRequestCommand
+ 
+
+[COMPLETE] All smoke tests finished.

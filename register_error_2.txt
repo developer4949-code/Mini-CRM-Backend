@@ -1,0 +1,7 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   119  100   117  100     2  35648    609 --:--:-- --:--:-- --:--:-- 39666
+curl: (3) URL rejected: Malformed input to a URL function
+{"status":"error","statusCode":400,"message":"Expected property name or '}' in JSON at position 1 (line 1 column 2)"}
