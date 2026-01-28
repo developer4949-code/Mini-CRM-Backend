@@ -1,7 +1,8 @@
 services:
   - type: web
     name: mini-crm-backend
-    env: node
+    runtime: node
+    plan: free
     buildCommand: npm install && npx prisma generate && npm run build
     startCommand: npx prisma migrate deploy && npm start
     envVars:
@@ -16,5 +17,4 @@ services:
 
 databases:
   - name: mini-crm-db
-    type: postgres
-    region: oregon
+    plan: free
