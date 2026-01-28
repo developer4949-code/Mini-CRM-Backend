@@ -3,6 +3,23 @@
 Backend Developer Intern Assignment for Prysm Labs.
 Built with Node.js (Express), TypeScript, Prisma, and PostgreSQL.
 
+**Live Demo (Swagger UI):**
+[https://mini-crm-backend-6svg.onrender.com/api-docs/](https://mini-crm-backend-6svg.onrender.com/api-docs/)
+
+![API Documentation Screenshot](Screenshot%202026-01-28%20225640.png)
+
+## Project Architecture & Flow
+```mermaid
+graph TD
+    Client[Client / Postman / Swagger] -->|Request| App[Express App]
+    App -->|Middleware| Auth[AuthMiddleware - JWT/RBAC]
+    Auth -->|Valid Request| Routes[API Routes]
+    Routes --> Controllers[Controllers]
+    Controllers --> Services[Services]
+    Services --> Prisma[Prisma Client]
+    Prisma --> DB[(PostgreSQL)]
+```
+
 ## Features
 - **Authentication**: JWT-based auth with RBAC (Admin, Employee).
 - **Users**: Admin can manage user roles.
@@ -32,7 +49,7 @@ Built with Node.js (Express), TypeScript, Prisma, and PostgreSQL.
     *If using Docker:*
     ```bash
     docker-compose up -d
-    # Update .env DATABASE_URL to: postgresql://admin:password123@localhost:5432/minicrm?schema=public
+    # Update .env DATABASE_URL to: postgresql://myuser:mypassword@localhost:5432/minicrm?schema=public
     ```
 
 3.  **Database Setup**
