@@ -25,6 +25,11 @@ router.use(authMiddleware_1.authenticate);
  *         name: limit
  *         schema:
  *           type: integer
+ *       - in: query
+ *         name: search
+ *         schema:
+ *           type: string
+ *         description: Search by name, email, or phone
  *     responses:
  *       200:
  *         description: List of customers
