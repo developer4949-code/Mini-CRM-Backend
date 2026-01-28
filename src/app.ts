@@ -58,7 +58,7 @@ app.use('/users', userRoutes);
 app.use('/customers', customerRoutes);
 app.use('/tasks', taskRoutes);
 app.get('/', (req, res) => {
-    res.send('Mini CRM Backend API is running. Documentation at /api-docs');
+    res.redirect('/api-docs');
 });
 
 // Error Handling
