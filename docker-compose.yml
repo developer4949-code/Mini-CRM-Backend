@@ -13,5 +13,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  app:
+    build: .
+    container_name: minicrm-app
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=postgresql://myuser:mypassword@postgres:5432/minicrm?schema=public
+      - JWT_SECRET=your_jwt_secret_here
+      - PORT=3000
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:

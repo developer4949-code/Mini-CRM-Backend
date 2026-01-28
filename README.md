@@ -59,8 +59,18 @@ Built with Node.js (Express), TypeScript, Prisma, and PostgreSQL.
 ## API Documentation
 Access Swagger UI at: `http://localhost:3000/api-docs`
 
+**Endpoint Collection (Zoho Sheet):**
+[View Published API Collection Sheet](https://sheet.zohopublic.in/sheet/publishedsheet/fa9cce2a391762fc3f20284104e122cf761ceb42897a231fa2f7eba1d6005fd0?type=grid)
+
 ## Testing
-Import `postman_collection.json` into Postman to test all endpoints.
+1. **Unit Tests (Jest):**
+   ```bash
+   npm test
+   ```
+2. **Smoke Test script:**
+   ```bash
+   npx ts-node smoke-test.ts
+   ```
 
 ## Project Structure
 - `src/controllers`: Request handlers.
